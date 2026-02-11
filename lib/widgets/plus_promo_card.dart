@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:novanox_task_for_alex/welcome_screen.dart';
 class ClassicPlusPromoCard extends StatelessWidget {
   const ClassicPlusPromoCard({super.key});
 static const LinearGradient classicPlusGradient = LinearGradient(
@@ -85,20 +86,27 @@ static const LinearGradient classicPlusGradient = LinearGradient(
             const SizedBox(height: 18),
 
             /// CTA
-            Container(
-              height: 48,
-              alignment: Alignment.center,
-              decoration: BoxDecoration(
-                color: const Color(0xFF4F5A63),
-                borderRadius: BorderRadius.circular(26),
-              ),
-              child: const Text(
-                'להצטרפות',
-                style: TextStyle(
-                  fontFamily: 'Heebo',
-                  fontSize: 16,
-                  fontWeight: FontWeight.w700,
-                  color: Colors.white,
+            InkWell(
+              onTap: () {
+                Navigator.of(context).push(
+                  MaterialPageRoute(builder: (context) => WelcomeScreen()),
+                );
+              },
+              child: Container(
+                height: 48,
+                alignment: Alignment.center,
+                decoration: BoxDecoration(
+                  color: const Color(0xFF4F5A63),
+                  borderRadius: BorderRadius.circular(26),
+                ),
+                child: const Text(
+                  'להצטרפות',
+                  style: TextStyle(
+                    fontFamily: 'Heebo',
+                    fontSize: 16,
+                    fontWeight: FontWeight.w700,
+                    color: Colors.white,
+                  ),
                 ),
               ),
             ),

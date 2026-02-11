@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:novanox_task_for_alex/welcome_screen.dart';
 
 class PremiumPromoCard extends StatelessWidget {
   const PremiumPromoCard({super.key});
@@ -81,21 +82,28 @@ class PremiumPromoCard extends StatelessWidget {
             const SizedBox(height: 18),
 
             /// CTA BUTTON
-            Container(
-              height: 48,
-              width: double.infinity,
-              alignment: Alignment.center,
-              decoration: BoxDecoration(
-                color: const Color(0xFF4E5962),
-                borderRadius: BorderRadius.circular(26),
-              ),
-              child: const Text(
-                'להצטרפות',
-                style: TextStyle(
-                  fontFamily: 'Heebo',
-                  fontSize: 16,
-                  fontWeight: FontWeight.w700,
-                  color: Colors.white,
+            InkWell(
+              onTap: () {
+                Navigator.of(context).push(
+                  MaterialPageRoute(builder: (context) => WelcomeScreen()),
+                );
+              },
+              child: Container(
+                height: 48,
+                width: double.infinity,
+                alignment: Alignment.center,
+                decoration: BoxDecoration(
+                  color: const Color(0xFF4E5962),
+                  borderRadius: BorderRadius.circular(26),
+                ),
+                child: const Text(
+                  'להצטרפות',
+                  style: TextStyle(
+                    fontFamily: 'Heebo',
+                    fontSize: 16,
+                    fontWeight: FontWeight.w700,
+                    color: Colors.white,
+                  ),
                 ),
               ),
             ),
